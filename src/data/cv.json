@@ -1,0 +1,111 @@
+{
+  "sections": [
+    {
+      "title": "Education",
+      "subsections": [
+        {
+          "title": "University of South Florida",
+          "time": "Expected May 2030",
+          "location": "Tampa, FL",
+          "content": ["B.S. in Artificial Intelligence. Freshman."]
+        },
+        {
+          "title": "Hanoi-Amsterdam High School for the Gifted",
+          "time": "June 2026",
+          "location": "Hanoi, Vietnam",
+          "content": [
+            "High School Diploma. GPA: Grade 9: 9.3 | Grade 10: 9.5 | Grade 11: 9.7.",
+            "SAT: 1530 (Verbal 770, Math 760); SAT Superscore: 1570 (August 2025).",
+            "IELTS: 7.5 Overall (Listening 8.0, Reading 9.0, Speaking 6.5, Writing 7.0), October 2025."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Projects",
+      "subsections": [
+        {
+          "title": "Diabetic Retinopathy Detection Using Machine Learning",
+          "time": "2025 – May 2025",
+          "content": [
+            "Built a machine-learning pipeline to detect diabetic retinopathy from retinal fundus images using a publicly available dataset of labeled retinal images.",
+            "Performed data preprocessing, model training, and evaluation using Python and computer-vision libraries, focusing on identifying visual patterns associated with diabetic retinopathy.",
+            "Presented the system at the Advanced Innovation Global Competition in Singapore, receiving a Gold Medal."
+          ]
+        },
+        {
+          "title": "Application of Machine Learning Algorithms in Prediction of Hotel Booking Cancellations",
+          "time": "September 2025",
+          "content": [
+            "Published research in IJSRM (International Journal of Scientific Research and Management), September 2025, evaluating five ML algorithms: Random Forest, k-Nearest Neighbors, Naive Bayes, SVM, and Decision Tree to predict hotel booking cancellations.",
+            "Trained and tested models on 36,300 customer records (25,000 training, 11,300 testing) using 13 booking features including lead time, average price per room, meal plan type, and prior cancellation history.",
+            "Random Forest achieved the highest classification accuracy at 91.0%, outperforming k-NN (82.5%), Naive Bayes (82.0%), SVM (80.0%), and Decision Tree (79.0%)."
+          ]
+        },
+        {
+          "title": "AI-Activated Robotic Arm",
+          "time": "2025 – July 2025",
+          "content": [
+            "Developed the AI and programming components of a computer-vision-driven robotic arm, using an object-detection model to trigger physical arm movements based on detection results.",
+            "Trained an object-detection model using the Ultralytics YOLO framework and wrote integration code connecting model predictions to robotic-arm behavior.",
+            "Presented the system at the World Invention Creativity Olympic and Conference in Korea, receiving a Gold Medal."
+          ]
+        },
+        {
+          "title": "ECO SMART RAIL TRANSIT: AI-Based Railway Safety Monitoring System",
+          "time": "2025 – September 2025",
+          "content": [
+            "Built a computer-vision system for automated railway safety monitoring, training an object-detection model to identify potential hazards in railway environments.",
+            "Managed the full ML pipeline: data preparation, model training using the Ultralytics YOLO ecosystem, and evaluation on held-out images; used cloud-based computing for model training.",
+            "Presented the system at INOVA 2025 (49th International Invention Show) in Croatia, receiving a Gold Medal."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Activities & Leadership",
+      "subsections": [
+        {
+          "title": "Technical Lead",
+          "time": "October 2026 – Present",
+          "location": "Society of Competitive Programmers (SCP), University of South Florida",
+          "content": [
+            "Technical Lead of the Society of Competitive Programmers at the University of South Florida."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Skills",
+      "subsections": [
+        {
+          "title": "Technical Skills",
+          "content": [
+            "Programming Languages: Python, C++, JavaScript/TypeScript, HTML5, CSS, SQL",
+            "Machine Learning and AI: LangChain, NumPy, Pandas, Matplotlib, Seaborn, scikit-learn, PyTorch, TensorFlow, Ultralytics YOLO",
+            "Web/Mobile Technologies: Node.js, Vite.js, Express.js, React.js, FastAPI, React Native, Flask, Next.js, Tailwind CSS, SwiftUI",
+            "Tools: Git/GitHub",
+            "Technical: Machine Learning, Computer Vision, Object Detection, AI Algorithm Design, Hardware Prototyping, Arduino, Raspberry Pi, Sensor Modules"
+          ]
+        },
+        {
+          "title": "Languages",
+          "content": ["Vietnamese (Native)", "English (IELTS 7.5)"]
+        }
+      ]
+    },
+    {
+      "title": "Awards & Honors",
+      "subsections": [
+        {
+          "title": "Gold Medals",
+          "content": [
+            "Gold Medal, Advanced Innovation Global Competition, Singapore (May 2025)",
+            "Gold Medal, World Invention Creativity Olympic and Conference 2025, Korea (July 2025)",
+            "Gold Medal, INOVA 2025 (49th International Invention Show), Croatia (September 2025)"
+          ]
+        }
+      ]
+    }
+  ]
+}

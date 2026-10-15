@@ -1,0 +1,41 @@
+.momentsContainer {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.momentsHeader {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.momentsTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--off-black);
+  margin-bottom: 1rem;
+}
+
+.momentsSubtitle {
+  font-size: 1.2rem;
+  color: var(--dark-grey);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.achievementsList {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+@media (max-width: 768px) {
+  .momentsTitle {
+    font-size: 2rem;
+  }
+  
+  .momentsSubtitle {
+    font-size: 1rem;
+  }
+}
