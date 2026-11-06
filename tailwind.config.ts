@@ -91,7 +91,8 @@ const config = {
           },
         },
         rise: {
-          from: { opacity: "0", transform: "translateY(0.35em)" },
+          // Starts mostly visible, so content never sits hidden if the animation stalls.
+          from: { opacity: "0.4", transform: "translateY(0.35em)" },
           to: { opacity: "1", transform: "none" },
         },
         slide: {

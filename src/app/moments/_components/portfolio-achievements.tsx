@@ -7,11 +7,13 @@ type Achievement = {
   title: string;
   date: string;
   description: string;
-  image?: string;
+  // Optional picture. A "photo" is shown large beside the text;
+  // a "logo" is shown as a small mark next to the title.
+  image?: { src: string; alt: string; kind: "photo" | "logo" };
 };
 
 // Add your moments here, newest first. Put photos in /public/moments.
-// "image" is optional (a photo or logo); leave it out for a text-only moment.
+// "image" is optional; leave it out for a text-only moment.
 const achievements: Achievement[] = [
   {
     id: "7",
@@ -19,7 +21,7 @@ const achievements: Achievement[] = [
     date: "October 2026",
     description:
       "Joined ERA Lab at the University of South Florida as an Undergraduate Research Assistant, researching 3D sonar-based object detection from underwater point clouds, sparse voxel attention, and multi-modal fusion architectures.",
-    image: "/logos/era-lab.png",
+    image: { src: "/logos/era-lab.png", alt: "ERA Lab logo", kind: "logo" },
   },
   {
     id: "6",
@@ -27,7 +29,11 @@ const achievements: Achievement[] = [
     date: "October 2026",
     description:
       "Became the Technical Lead of the Society of Competitive Programmers (SCP) at the University of South Florida.",
-    image: "/moments/SCP.jpg",
+    image: {
+      src: "/moments/SCP.jpg",
+      alt: "Society of Competitive Programmers logo",
+      kind: "logo",
+    },
   },
   {
     id: "5",
@@ -35,7 +41,11 @@ const achievements: Achievement[] = [
     date: "Fall 2026",
     description:
       "Began my B.S. in Computer Science at the University of South Florida in Tampa, Florida.",
-    image: "/moments/USF.png",
+    image: {
+      src: "/moments/USF.png",
+      alt: "University of South Florida logo",
+      kind: "logo",
+    },
   },
   {
     id: "4",
@@ -89,34 +99,53 @@ export default function PortfolioAchievements() {
           label={<span className="tabular-nums">{group.year}</span>}
           className="py-12"
         >
-          <ol className="space-y-12">
-            {group.items.map((a) => (
-              <li
-                key={a.id}
-                className="grid gap-6 sm:grid-cols-[minmax(0,1fr)_11rem] md:grid-cols-[minmax(0,1fr)_14rem]"
-              >
-                <div>
-                  <p className="text-sm font-medium text-dark-grey">{a.date}</p>
-                  <h3 className="mt-1 text-xl font-semibold tracking-tight text-off-black sm:text-2xl">
-                    {a.title}
-                  </h3>
-                  <p className="mt-3 max-w-[60ch] leading-relaxed text-dark-grey">
-                    {a.description}
-                  </p>
-                </div>
-                {a.image && (
-                  <div className="relative aspect-[4/3] w-full max-w-[14rem] overflow-hidden rounded-lg bg-off-white">
-                    <Image
-                      src={a.image}
-                      alt=""
-                      fill
-                      sizes="(min-width: 768px) 224px, 176px"
-                      className="object-contain p-3"
-                    />
+          <ol className="divide-y divide-light-grey/60">
+            {group.items.map((a) => {
+              const photo = a.image?.kind === "photo" ? a.image : undefined;
+              const logo = a.image?.kind === "logo" ? a.image : undefined;
+              return (
+                <li
+                  key={a.id}
+                  className={`grid gap-x-10 gap-y-5 py-8 first:pt-0 last:pb-0 ${
+                    photo ? "md:grid-cols-[minmax(0,1fr)_17rem]" : ""
+                  }`}
+                >
+                  <div>
+                    <p className="text-sm font-medium text-dark-grey">{a.date}</p>
+                    <div className="mt-1 flex items-start gap-3">
+                      {logo && (
+                        <span className="relative mt-0.5 h-10 w-10 shrink-0 overflow-hidden rounded-md bg-off-white">
+                          <Image
+                            src={logo.src}
+                            alt={logo.alt}
+                            fill
+                            sizes="40px"
+                            className="object-contain"
+                          />
+                        </span>
+                      )}
+                      <h3 className="text-xl font-semibold tracking-tight text-off-black sm:text-2xl">
+                        {a.title}
+                      </h3>
+                    </div>
+                    <p className="mt-3 max-w-[60ch] leading-relaxed text-dark-grey">
+                      {a.description}
+                    </p>
                   </div>
-                )}
-              </li>
-            ))}
+                  {photo && (
+                    <div className="relative aspect-[5/4] w-full max-w-sm overflow-hidden rounded-lg bg-off-white md:max-w-none">
+                      <Image
+                        src={photo.src}
+                        alt={photo.alt}
+                        fill
+                        sizes="(min-width: 768px) 272px, (min-width: 384px) 384px, 100vw"
+                        className="object-cover"
+                      />
+                    </div>
+                  )}
+                </li>
+              );
+            })}
           </ol>
         </Band>
       ))}

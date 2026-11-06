@@ -19,15 +19,19 @@ export const site = {
   avatar: "/avatar.png",
   logo: "/logo.png",
 
-  // Big headline at the top of the home page
+  // Short motto, shown as a quiet line at the bottom of the home page's first screen
   tagline: "Code. Create. Inspire.",
 
-  // First screen of the home page, under the tagline.
-  // In `intro`, your `name` (above) is shown in bold automatically.
+  // First screen of the home page. Your `name` (above) is the big headline.
   hero: {
+    // One or two sentences under your name
     intro:
-      "I'm Khanh N. Trinh, a Computer Science student at the University of South Florida working on applied AI.",
-    // Up to four short proof points, most important first
+      "Computer Science student at the University of South Florida, working on applied AI.",
+    // What you're looking for, shown just above the buttons. Leave "" to hide it.
+    seeking:
+      "Looking for SWE/ML internship",
+    // Up to four short proof points, most important first.
+    // Add `href` to link a point to its evidence (paper, repo...).
     proof: [
       {
         title: "Research Assistant, ERA Lab",
@@ -40,6 +44,7 @@ export const site = {
       {
         title: "Published in IJSRM",
         detail: "Machine learning for hotel booking cancellations, 2025",
+        href: "https://ijsrm.net/index.php/ijsrm/article/view/6631",
       },
       {
         title: "Technical Lead, SCP",

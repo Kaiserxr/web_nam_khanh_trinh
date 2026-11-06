@@ -19,6 +19,8 @@ export interface FeaturedWork {
   metrics?: string[];
   // Tools used. Optional.
   tools?: string[];
+  // Where a visitor can check the work (paper, repo, results page). Optional.
+  link?: { href: string; label: string };
 }
 
 export const featuredWork: FeaturedWork[] = [
@@ -42,6 +44,7 @@ export const featuredWork: FeaturedWork[] = [
     outcomeKind: "publication",
     metrics: ["91.0% accuracy", "36,300 records"],
     tools: ["Python", "scikit-learn", "Pandas"],
+    link: { href: "https://ijsrm.net/index.php/ijsrm/article/view/6631", label: "Read the paper" },
   },
   {
     date: "Sep 2025",

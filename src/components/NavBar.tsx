@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { HamburgerMenuIcon, Cross1Icon } from "@radix-ui/react-icons";
+import { HamburgerMenuIcon, Cross1Icon, DownloadIcon } from "@radix-ui/react-icons";
 import { site } from "@/data/site";
 
 const NAV_LINKS = [
@@ -23,8 +23,20 @@ const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
 
+  const resume = site.documents[0];
+
   // Close the mobile menu whenever the route changes.
   useEffect(() => setIsOpen(false), [pathname]);
+
+  // Escape closes the mobile menu.
+  useEffect(() => {
+    if (!isOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setIsOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [isOpen]);
 
   const isActive = (href: string) =>
     pathname === href || pathname.startsWith(`${href}/`);
@@ -116,6 +128,19 @@ const Navbar: React.FC = () => {
               </li>
             );
           })}
+          {resume && (
+            <li className="mt-2 border-t border-light-grey pt-3">
+              <a
+                href={resume.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`flex items-center gap-2 rounded-md px-2 py-3 text-base font-semibold text-off-black ${focusRing}`}
+              >
+                <DownloadIcon className="h-4 w-4" aria-hidden="true" />
+                {site.hero.resumeLabel}
+              </a>
+            </li>
+          )}
         </ul>
       )}
     </nav>

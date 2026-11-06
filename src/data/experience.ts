@@ -7,6 +7,8 @@ export interface Experience {
   bulletPoints: string[];
   // Optional organization logo, a file in /public (e.g. "/logos/era-lab.png")
   logo?: string;
+  // Optional link to check the work (paper, repo...), shown under the bullets
+  link?: { href: string; label: string };
 }
 
 // Add one object per role, newest first. Copy an entry to add more.
@@ -28,18 +30,21 @@ export const experiences: Experience[] = [
   {
     date: "October 2026 - Present",
     title: "Technical Lead",
-    company: "Society of Competitive Programmers (SCP), University of South Florida",
-    description:
-      "Technical Lead of the Society of Competitive Programmers at the University of South Florida.",
+    company: "Society of Competitive Programmers (SCP), University of South Florida, Tampa, FL",
+    description: "",
     techStack: ["C++", "Python", "Algorithms", "Data Structures"],
     bulletPoints: [
-      "Technical Lead of the Society of Competitive Programmers at the University of South Florida.",
+      "Design and lead technical workshops on algorithms, data structures, and competitive programming strategy.",
+      "Author and review contest problems, test cases, and editorials for correctness and difficulty balance.",
+      "Help host and run club coding contests, managing problem sets and contest logistics.",
+      "Selected to compete for the University of South Florida at ICPC 2026.",
     ],
   },
   {
     date: "September 2025",
     title: "Published Researcher",
     company: "IJSRM (International Journal of Scientific Research and Management)",
+    link: { href: "https://ijsrm.net/index.php/ijsrm/article/view/6631", label: "Read the paper" },
     description:
       "Published research comparing five machine-learning algorithms for predicting hotel booking cancellations; Random Forest reached 91.0% accuracy.",
     techStack: ["Python", "scikit-learn", "Pandas", "Machine Learning"],

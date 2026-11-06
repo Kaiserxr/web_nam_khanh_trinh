@@ -12,7 +12,7 @@ Primary: tech recruiters and engineers screening candidates for software-enginee
 
 ## Product Purpose
 
-The personal portfolio of Khanh N. Trinh, a freshman B.S. in Computer Science student at the University of South Florida (expected May 2030). It exists to turn a short recruiter visit into an interview: surface credible evidence of applied AI work, make the resume one click away, and make contacting Khanh effortless. Success means a recruiter can, within a minute, name what sets Khanh apart and reach the resume or contact details.
+The personal portfolio of Khanh N. Trinh, a freshman B.S. in Computer Science student at the University of South Florida (expected May 2030). It exists to turn a short recruiter visit into an interview: surface credible evidence of applied AI work, make the resume one click away, and make contacting Khanh effortless. Khanh's stated goal is a software engineering or machine learning internship, ideally by sophomore year; the site says so on the first screen (`site.hero.seeking`). Success means a recruiter can, within a minute, name what sets Khanh apart and reach the resume or contact details.
 
 ## Positioning
 
@@ -22,7 +22,7 @@ A Computer Science student focused on AI, whose record predates college and is e
 - **Award-winning applied AI:** three international Gold Medals for computer-vision projects (Singapore, Korea, Croatia, 2025).
 - **Published researcher:** IJSRM paper (September 2025) comparing five ML algorithms for hotel booking cancellation prediction; Random Forest reached 91.0% accuracy.
 - **AI that touches hardware:** YOLO object detection driving a robotic arm; AI railway safety monitoring (Arduino, Raspberry Pi).
-- **Competitive programming:** Technical Lead, Society of Competitive Programmers, USF (October 2026 – present).
+- **Competitive programming:** Technical Lead, Society of Competitive Programmers, USF (October 2026 – present): runs workshops, authors contest problems, hosts club contests; selected to compete for USF at ICPC 2026.
 
 ## Operating Context
 
@@ -41,7 +41,7 @@ A Computer Science student focused on AI, whose record predates college and is e
 ## Brand Commitments
 
 - Name: "Khanh N. Trinh"; short name "khanh" in the nav. Existing logo (`/logo.png`) and avatar (`/avatar.png`).
-- Current home tagline: "Code. Create. Inspire." (existing copy; changing it needs the owner's approval).
+- Tagline: "Code. Create. Inspire." The owner approved demoting it (November 2026): the name is the home h1 and the tagline is a quiet line on the first screen. Removing or rewording it still needs the owner's approval.
 - Voice: first person, earnest, specific about what was built and what it achieved.
 
 ## Evidence on Hand
@@ -60,3 +60,7 @@ A Computer Science student focused on AI, whose record predates college and is e
 2. **One-minute recruiter path.** Who Khanh is, what sets Khanh apart, resume, and contact must be reachable from the first screen without hunting.
 3. **Data stays editable.** Every piece of copy lives in `src/data/`; design must not hard-code content the owner needs to update.
 4. **Honest about stage.** A freshman with a strong early record, presented confidently but never inflated; empty sections stay empty rather than padded.
+
+## Accessibility & Inclusion
+
+Target WCAG 2.2 AA across every page: text contrast at least 4.5:1 (3:1 for large text and UI boundaries), full keyboard operation with a visible focus indicator, meaningful alt text on photos and logos, and respect for `prefers-reduced-motion` on entrance and tagline animations. Recruiters often skim on phones, so touch targets stay at least 44px and nothing depends on hover.

@@ -1,11 +1,12 @@
 import React from "react";
 import type { Experience } from "@/data/experience";
+import SourceLink from "@/components/SourceLink";
 
 const TimelineNode: React.FC<{ experience: Experience; isLast?: boolean }> = ({
   experience,
   isLast = false,
 }) => {
-  const { date, title, company, description, techStack, bulletPoints, logo } =
+  const { date, title, company, description, techStack, bulletPoints, logo, link } =
     experience;
   const current = /present|now/i.test(date);
   // Skip the description when it only repeats the first bullet.
@@ -69,6 +70,12 @@ const TimelineNode: React.FC<{ experience: Experience; isLast?: boolean }> = ({
               </li>
             ))}
           </ul>
+        )}
+
+        {link && (
+          <p className="mt-4">
+            <SourceLink href={link.href} label={link.label} />
+          </p>
         )}
 
         {techStack.length > 0 && (

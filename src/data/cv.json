@@ -49,6 +49,7 @@
         {
           "title": "Application of Machine Learning Algorithms in Prediction of Hotel Booking Cancellations",
           "time": "September 2025",
+          "link": "https://ijsrm.net/index.php/ijsrm/article/view/6631",
           "content": [
             "Published research in IJSRM (International Journal of Scientific Research and Management), September 2025, evaluating five ML algorithms: Random Forest, k-Nearest Neighbors, Naive Bayes, SVM, and Decision Tree to predict hotel booking cancellations.",
             "Trained and tested models on 36,300 customer records (25,000 training, 11,300 testing) using 13 booking features including lead time, average price per room, meal plan type, and prior cancellation history.",
@@ -81,9 +82,12 @@
         {
           "title": "Technical Lead",
           "time": "October 2026 – Present",
-          "location": "Society of Competitive Programmers (SCP), University of South Florida",
+          "location": "Society of Competitive Programmers (SCP), University of South Florida, Tampa, FL",
           "content": [
-            "Technical Lead of the Society of Competitive Programmers at the University of South Florida."
+            "Design and lead technical workshops on algorithms, data structures, and competitive programming strategy.",
+            "Author and review contest problems, test cases, and editorials for correctness and difficulty balance.",
+            "Help host and run club coding contests, managing problem sets and contest logistics.",
+            "Selected to compete for the University of South Florida at ICPC 2026."
           ]
         }
       ]

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Medal, BookOpen, Radar, type LucideIcon } from "lucide-react";
 import { ArrowRightIcon } from "@radix-ui/react-icons";
 import { featuredWork, type FeaturedWork } from "@/data/featured";
+import SourceLink from "@/components/SourceLink";
 
 const outcomeIcon: Record<FeaturedWork["outcomeKind"], LucideIcon> = {
   award: Medal,
@@ -84,6 +85,11 @@ const SelectedWork: React.FC = () => {
                   {work.tools && work.tools.length > 0 && (
                     <p className="mt-3 text-sm text-cool-grey">
                       {work.tools.join(" · ")}
+                    </p>
+                  )}
+                  {work.link && (
+                    <p className="mt-4">
+                      <SourceLink href={work.link.href} label={work.link.label} />
                     </p>
                   )}
                 </div>

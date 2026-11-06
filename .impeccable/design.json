@@ -1,39 +1,191 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-06T00:00:00Z",
+  "generatedAt": "2026-11-06T22:59:47.279Z",
   "title": "Design System: Khanh N. Trinh",
   "extensions": {
     "colorMeta": {
-      "night-page": { "role": "neutral", "displayName": "Night Page", "canonical": "#0F1115", "tonalRamp": ["#08090B", "#0F1115", "#1A1D24", "#2A2E36", "#454A54", "#6B717C", "#A1A1AA", "#EDEDED"] },
-      "graphite-surface": { "role": "neutral", "displayName": "Graphite Surface", "canonical": "#1A1D24", "tonalRamp": ["#0F1115", "#1A1D24", "#23272F", "#2A2E36", "#3A3F49", "#565C67", "#7D838E", "#B5BAC2"] },
-      "graphite-raised": { "role": "neutral", "displayName": "Graphite Raised", "canonical": "#2A2E36", "tonalRamp": ["#14161B", "#1E2127", "#2A2E36", "#3A3F49", "#4D535E", "#686E79", "#8E949E", "#C3C7CD"] },
-      "ember-coral": { "role": "primary", "displayName": "Ember Coral", "canonical": "#FF7043", "tonalRamp": ["#4A1A0C", "#7A2A13", "#B23E1D", "#E5572C", "#FF7043", "#FF936F", "#FFBAA2", "#FFE2D8"] },
-      "moon-text": { "role": "neutral", "displayName": "Moon Text", "canonical": "#EDEDED", "tonalRamp": ["#2E2E2E", "#4F4F4F", "#737373", "#999999", "#BDBDBD", "#D6D6D6", "#EDEDED", "#FAFAFA"] },
-      "ash-text": { "role": "neutral", "displayName": "Ash Text", "canonical": "#A1A1AA", "tonalRamp": ["#27272A", "#3F3F46", "#52525B", "#71717A", "#A1A1AA", "#C4C4CA", "#D4D4D8", "#F4F4F5"] },
-      "slate-line": { "role": "neutral", "displayName": "Slate Line", "canonical": "#9AA4AE", "tonalRamp": ["#22272C", "#363E46", "#4D5761", "#6A747F", "#9AA4AE", "#B6BEC6", "#D1D7DC", "#EDF0F2"] }
+      "night-page": {
+        "role": "neutral",
+        "displayName": "Night Page",
+        "canonical": "#0F1115",
+        "tonalRamp": [
+          "#08090B",
+          "#0F1115",
+          "#1A1D24",
+          "#2A2E36",
+          "#454A54",
+          "#6B717C",
+          "#A1A1AA",
+          "#EDEDED"
+        ]
+      },
+      "graphite-surface": {
+        "role": "neutral",
+        "displayName": "Graphite Surface",
+        "canonical": "#1A1D24",
+        "tonalRamp": [
+          "#0F1115",
+          "#1A1D24",
+          "#23272F",
+          "#2A2E36",
+          "#3A3F49",
+          "#565C67",
+          "#7D838E",
+          "#B5BAC2"
+        ]
+      },
+      "graphite-raised": {
+        "role": "neutral",
+        "displayName": "Graphite Raised",
+        "canonical": "#2A2E36",
+        "tonalRamp": [
+          "#14161B",
+          "#1E2127",
+          "#2A2E36",
+          "#3A3F49",
+          "#4D535E",
+          "#686E79",
+          "#8E949E",
+          "#C3C7CD"
+        ]
+      },
+      "ember-coral": {
+        "role": "primary",
+        "displayName": "Ember Coral",
+        "canonical": "#FF7043",
+        "tonalRamp": [
+          "#4A1A0C",
+          "#7A2A13",
+          "#B23E1D",
+          "#E5572C",
+          "#FF7043",
+          "#FF936F",
+          "#FFBAA2",
+          "#FFE2D8"
+        ]
+      },
+      "moon-text": {
+        "role": "neutral",
+        "displayName": "Moon Text",
+        "canonical": "#EDEDED",
+        "tonalRamp": [
+          "#2E2E2E",
+          "#4F4F4F",
+          "#737373",
+          "#999999",
+          "#BDBDBD",
+          "#D6D6D6",
+          "#EDEDED",
+          "#FAFAFA"
+        ]
+      },
+      "ash-text": {
+        "role": "neutral",
+        "displayName": "Ash Text",
+        "canonical": "#A1A1AA",
+        "tonalRamp": [
+          "#27272A",
+          "#3F3F46",
+          "#52525B",
+          "#71717A",
+          "#A1A1AA",
+          "#C4C4CA",
+          "#D4D4D8",
+          "#F4F4F5"
+        ]
+      },
+      "slate-line": {
+        "role": "neutral",
+        "displayName": "Slate Line",
+        "canonical": "#9AA4AE",
+        "tonalRamp": [
+          "#22272C",
+          "#363E46",
+          "#4D5761",
+          "#6A747F",
+          "#9AA4AE",
+          "#B6BEC6",
+          "#D1D7DC",
+          "#EDF0F2"
+        ]
+      },
+      "ember-coral-hover": {
+        "role": "primary",
+        "displayName": "Ember Coral Hover",
+        "canonical": "#FF8A65",
+        "tonalRamp": [
+          "#4A1A0C",
+          "#7A2A13",
+          "#B23E1D",
+          "#E5572C",
+          "#FF7043",
+          "#FF8A65",
+          "#FFBAA2",
+          "#FFE2D8"
+        ]
+      }
     },
     "typographyMeta": {
-      "display": { "displayName": "Display", "purpose": "Page-defining titles; home tagline reveal." },
-      "headline": { "displayName": "Headline", "purpose": "Page titles." },
-      "title": { "displayName": "Title", "purpose": "Card titles and timeline roles." },
-      "body": { "displayName": "Body", "purpose": "Paragraphs and descriptions, 65-75ch measure." },
-      "label": { "displayName": "Label", "purpose": "Nav links, dates, organisations, chips." }
+      "display": {
+        "displayName": "Display",
+        "purpose": "The home page h1 (the owner's name) only."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Inner page titles in the page header."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Row titles: roles, projects, moments."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Descriptions and bullets in Ash Text, 60–68ch."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Nav links, dates, organisations, evidence links; chips at 0.75rem."
+      }
     },
-    "shadows": [
-      { "name": "card-rest", "value": "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)", "purpose": "Resting project and timeline cards." },
-      { "name": "card-hover", "value": "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)", "purpose": "Interactive card hover, paired with translateY(-4px)." }
-    ],
+    "shadows": [],
     "motion": [
-      { "name": "entrance", "value": "opacity + translateY, 0.5-1s ease-out", "purpose": "Section and timeline card entrances (framer-motion)." },
-      { "name": "hover-color", "value": "color 150ms cubic-bezier(0.4, 0, 0.2, 1)", "purpose": "Nav and link hover to Ember Coral." },
-      { "name": "card-lift", "value": "transform 300ms", "purpose": "Card hover lift." }
+      {
+        "name": "rise",
+        "value": "700ms cubic-bezier(0.16, 1, 0.3, 1); from opacity 0.4 + translateY(0.35em)",
+        "purpose": "Home first-screen entrance, staggered 60ms per step; motion-safe only."
+      },
+      {
+        "name": "hover-color",
+        "value": "color / background-color 150ms cubic-bezier(0.4, 0, 0.2, 1)",
+        "purpose": "Link, nav and button hover."
+      },
+      {
+        "name": "arrow-nudge",
+        "value": "transform 150ms, translateX(2px)",
+        "purpose": "Trailing arrow on secondary buttons and section links."
+      }
     ],
     "breakpoints": [
-      { "name": "sm", "value": "640px" },
-      { "name": "md", "value": "768px" },
-      { "name": "lg", "value": "1024px" },
-      { "name": "xl", "value": "1280px" },
-      { "name": "container-max", "value": "1400px" }
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      },
+      {
+        "name": "xl",
+        "value": "1280px"
+      },
+      {
+        "name": "container-max",
+        "value": "1400px"
+      }
     ]
   },
   "components": [
@@ -41,72 +193,122 @@
       "name": "Primary Button",
       "kind": "button",
       "refersTo": "button-primary",
-      "description": "Pill shimmer button for the single primary action, e.g. View PDF on the CV page.",
-      "html": "<button class=\"ds-btn-primary\">View PDF</button>",
-      "css": ".ds-btn-primary { background: #000; color: #fff; padding: 12px 24px; border: 1px solid rgba(255,255,255,0.1); border-radius: 9999px; font: 500 0.875rem Inter, system-ui, sans-serif; box-shadow: inset 0 -8px 10px #ffffff1f; cursor: pointer; transition: box-shadow 300ms ease-in-out, transform 300ms ease-in-out; } .ds-btn-primary:hover { box-shadow: inset 0 -6px 10px #ffffff3f; } .ds-btn-primary:active { transform: translateY(1px); } .ds-btn-primary:focus-visible { outline: 2px solid #FF7043; outline-offset: 3px; }"
+      "description": "The one coral fill per screen; opens the resume.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 15 15\" fill=\"none\" aria-hidden=\"true\"><path d=\"M7.5 1a.5.5 0 0 1 .5.5v7.29l2.15-2.14a.5.5 0 0 1 .7.7l-3 3a.5.5 0 0 1-.7 0l-3-3a.5.5 0 1 1 .7-.7L7 8.79V1.5a.5.5 0 0 1 .5-.5ZM2.5 10a.5.5 0 0 1 .5.5V12c0 .55.45 1 1 1h7c.55 0 1-.45 1-1v-1.5a.5.5 0 0 1 1 0V12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-1.5a.5.5 0 0 1 .5-.5Z\" fill=\"currentColor\"/></svg>Resume (PDF)</a>",
+      "css": ".ds-btn-primary{font-family:Inter,system-ui,sans-serif;display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:12px 24px;border-radius:9999px;background:#FF7043;color:#0F1115;font-weight:600;font-size:16px;text-decoration:none;transition:background-color 150ms cubic-bezier(.4,0,.2,1)}.ds-btn-primary:hover{background:#FF8A65}.ds-btn-primary:focus-visible{outline:2px solid #FF7043;outline-offset:4px}"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Outline pill beside the primary action.",
+      "html": "<a class=\"ds-btn-secondary\" href=\"#\">Contact me<span class=\"ds-arrow\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 15 15\" fill=\"none\" aria-hidden=\"true\"><path d=\"M8.15 3.15a.5.5 0 0 1 .7 0l4 4a.5.5 0 0 1 0 .7l-4 4a.5.5 0 0 1-.7-.7L11.29 8H2.5a.5.5 0 0 1 0-1h8.79L8.15 3.85a.5.5 0 0 1 0-.7Z\" fill=\"currentColor\"/></svg></span></a>",
+      "css": ".ds-btn-secondary{font-family:Inter,system-ui,sans-serif;display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:12px 24px;border-radius:9999px;border:1px solid #2A2E36;background:transparent;color:#EDEDED;font-weight:500;font-size:16px;text-decoration:none;transition:border-color 150ms}.ds-btn-secondary:hover{border-color:#9AA4AE}.ds-btn-secondary .ds-arrow{display:inline-flex;transition:transform 150ms}.ds-btn-secondary:hover .ds-arrow{transform:translateX(2px)}.ds-btn-secondary:focus-visible{outline:2px solid #FF7043;outline-offset:4px}"
     },
     {
       "name": "Navigation",
       "kind": "nav",
       "refersTo": "nav-link",
-      "description": "Fixed top bar: logo and short name left, text links right, coral on hover.",
-      "html": "<nav class=\"ds-nav\"><span class=\"ds-nav-brand\">khanh</span><ul class=\"ds-nav-links\"><li><a href=\"#\">About</a></li><li><a href=\"#\">CV &amp; Resume</a></li><li><a href=\"#\">Experience</a></li><li><a href=\"#\">Contact</a></li></ul></nav>",
-      "css": ".ds-nav { display: flex; justify-content: space-between; align-items: center; padding: 16px; background: #0F1115; font-family: Inter, system-ui, sans-serif; } .ds-nav-brand { font-size: 1.5rem; font-weight: 700; color: #EDEDED; } .ds-nav-links { display: flex; gap: 32px; list-style: none; margin: 0; padding: 0; } .ds-nav-links a { color: #EDEDED; font-weight: 500; text-decoration: none; transition: color 150ms; } .ds-nav-links a:hover { color: #FF7043; } .ds-nav-links a:focus-visible { outline: 2px solid #FF7043; outline-offset: 4px; border-radius: 4px; }"
+      "description": "Fixed translucent bar; coral underline marks the current page.",
+      "html": "<nav class=\"ds-nav\"><span class=\"ds-nav-brand\">khanh</span><ul><li><a href=\"#\">About</a></li><li><a href=\"#\" aria-current=\"page\">Experience</a></li><li><a href=\"#\">Moments</a></li><li><a href=\"#\">Contact</a></li></ul></nav>",
+      "css": ".ds-nav{font-family:Inter,system-ui,sans-serif;display:flex;align-items:center;justify-content:space-between;padding:14px 24px;background:rgba(15,17,21,.85);border-bottom:1px solid rgba(42,46,54,.7)}.ds-nav-brand{font-size:20px;font-weight:700;color:#EDEDED}.ds-nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0}.ds-nav a{position:relative;font-size:14px;font-weight:500;color:#A1A1AA;text-decoration:none;padding:4px 0;transition:color 150ms}.ds-nav a:hover{color:#EDEDED}.ds-nav a[aria-current=page]{color:#EDEDED}.ds-nav a[aria-current=page]::after{content:\"\";position:absolute;left:0;right:0;bottom:-15px;height:2px;background:#FF7043}.ds-nav a:focus-visible{outline:2px solid #FF7043;outline-offset:4px}"
+    },
+    {
+      "name": "Evidence Link",
+      "kind": "custom",
+      "refersTo": "source-link",
+      "description": "Quiet outbound link to the paper, repo or results behind a claim.",
+      "html": "<a class=\"ds-source\" href=\"#\">Read the paper<svg width=\"14\" height=\"14\" viewBox=\"0 0 15 15\" fill=\"none\" aria-hidden=\"true\"><path d=\"M3 2C2.45 2 2 2.45 2 3v9c0 .55.45 1 1 1h9c.55 0 1-.45 1-1V8.5a.5.5 0 0 0-1 0V12H3V3h3.5a.5.5 0 0 0 0-1H3Zm9.85.15A.5.5 0 0 0 12.5 2h-4a.5.5 0 0 0 0 1h2.79L6.15 8.15a.5.5 0 1 0 .7.7L12 3.71V6.5a.5.5 0 0 0 1 0v-4a.5.5 0 0 0-.15-.35Z\" fill=\"currentColor\"/></svg></a>",
+      "css": ".ds-source{font-family:Inter,system-ui,sans-serif;display:inline-flex;align-items:center;gap:6px;padding:8px 0;font-size:14px;font-weight:500;color:#EDEDED;text-decoration:underline;text-decoration-color:rgba(154,164,174,.5);text-underline-offset:4px;transition:text-decoration-color 150ms}.ds-source svg{color:#A1A1AA}.ds-source:hover{text-decoration-color:#FF7043}.ds-source:focus-visible{outline:2px solid #FF7043;outline-offset:4px}"
     },
     {
       "name": "Chip",
       "kind": "chip",
       "refersTo": "chip",
-      "description": "Small pill tag for tech stack items.",
-      "html": "<span class=\"ds-chip\">Point Clouds</span>",
-      "css": ".ds-chip { display: inline-block; background: #2A2E36; color: #EDEDED; font: 500 0.75rem Inter, system-ui, sans-serif; padding: 4px 8px; border-radius: 9999px; }"
+      "description": "Tool tag on Experience entries.",
+      "html": "<span class=\"ds-chip\">C++</span><span class=\"ds-chip\">Python</span>",
+      "css": ".ds-chip{font-family:Inter,system-ui,sans-serif;display:inline-block;margin-right:8px;padding:4px 10px;border-radius:9999px;background:#2A2E36;color:#EDEDED;font-size:12px;font-weight:500}"
     },
     {
-      "name": "Project Card",
-      "kind": "card",
-      "refersTo": "card",
-      "description": "Graphite card with icon well, title and description; lifts on hover.",
-      "html": "<div class=\"ds-card\"><div class=\"ds-card-well\"><svg width=\"48\" height=\"48\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#FF7043\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z\"/><circle cx=\"12\" cy=\"12\" r=\"3\"/></svg></div><div class=\"ds-card-body\"><h3>Diabetic Retinopathy Detection</h3><p>ML pipeline for retinal images. Gold Medal, Singapore.</p></div></div>",
-      "css": ".ds-card { width: 280px; background: #1A1D24; border-radius: 8px; overflow: hidden; box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); transition: transform 300ms, box-shadow 300ms; font-family: Inter, system-ui, sans-serif; } .ds-card:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1); } .ds-card-well { height: 140px; display: flex; align-items: center; justify-content: center; background: rgba(15,17,21,0.6); } .ds-card-body { padding: 16px; } .ds-card-body h3 { margin: 0 0 8px; color: #EDEDED; font-size: 1.25rem; font-weight: 500; } .ds-card-body p { margin: 0; color: #A1A1AA; line-height: 1.5; }"
+      "name": "Proof Point",
+      "kind": "custom",
+      "refersTo": "",
+      "description": "Home first-screen claim: hairline, title, one-line detail.",
+      "html": "<div class=\"ds-proof\"><p class=\"ds-proof-t\">3× International Gold Medal</p><p class=\"ds-proof-d\">Computer-vision projects in Singapore, Korea and Croatia, 2025</p></div>",
+      "css": ".ds-proof{font-family:Inter,system-ui,sans-serif;max-width:300px;border-top:1px solid #2A2E36;padding-top:16px}.ds-proof-t{margin:0;font-weight:600;color:#EDEDED}.ds-proof-d{margin:4px 0 0;font-size:14px;line-height:1.35;color:#A1A1AA}"
     },
     {
       "name": "Timeline Entry",
       "kind": "custom",
-      "refersTo": "timeline-node",
-      "description": "Signature experience entry: coral node on a slate spine with a graphite card.",
-      "html": "<div class=\"ds-tl\"><span class=\"ds-tl-node\"></span><div class=\"ds-tl-card\"><h4>Research Assistant</h4><p class=\"ds-tl-meta\">ERA Lab</p><p class=\"ds-tl-meta\">November 2026 - Present</p><p>3D sonar detection with point clouds and sparse voxel attention.</p></div></div>",
-      "css": ".ds-tl { position: relative; padding-left: 48px; border-left: 2px solid rgba(154,164,174,0.2); font-family: Inter, system-ui, sans-serif; } .ds-tl-node { position: absolute; left: -17px; top: 16px; width: 32px; height: 32px; border-radius: 9999px; background: #FF7043; } .ds-tl-card { background: #1A1D24; border-radius: 8px; padding: 16px 24px; color: #A1A1AA; box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1); } .ds-tl-card h4 { margin: 0 0 4px; color: #EDEDED; font-size: 1.25rem; font-weight: 700; } .ds-tl-meta { margin: 0; font-size: 0.875rem; } .ds-tl-card p:last-child { margin-top: 8px; }"
+      "refersTo": "timeline-node-current",
+      "description": "Experience row on the spine; coral node marks a current role.",
+      "html": "<div class=\"ds-tl\"><span class=\"ds-tl-node\"></span><p class=\"ds-tl-date\">October 2026 – Present</p><h3>Technical Lead</h3><p class=\"ds-tl-org\">Society of Competitive Programmers, USF</p><p class=\"ds-tl-b\">Author and review contest problems, test cases, and editorials.</p></div>",
+      "css": ".ds-tl{font-family:Inter,system-ui,sans-serif;position:relative;border-left:1px solid #2A2E36;padding:0 0 8px 32px;max-width:520px}.ds-tl-node{position:absolute;left:-7px;top:30px;width:14px;height:14px;border-radius:9999px;background:#FF7043;border:2px solid #FF7043;box-sizing:border-box}.ds-tl-date{margin:0 0 4px;font-size:14px;font-weight:500;color:#A1A1AA}.ds-tl h3{margin:0;font-size:22px;font-weight:600;letter-spacing:-.015em;color:#EDEDED}.ds-tl-org{margin:6px 0 0;font-size:14px;font-weight:500;color:#EDEDED}.ds-tl-b{margin:12px 0 0;line-height:1.625;color:#A1A1AA}"
+    },
+    {
+      "name": "Moment",
+      "kind": "custom",
+      "refersTo": "logo-mark",
+      "description": "Moments row with a 40px logo mark beside the title.",
+      "html": "<div class=\"ds-mo\"><p class=\"ds-mo-date\">October 2026</p><div class=\"ds-mo-head\"><span class=\"ds-mo-mark\">ERA</span><h3>Research Assistant at ERA Lab</h3></div><p class=\"ds-mo-d\">Joined ERA Lab researching 3D sonar-based object detection.</p></div>",
+      "css": ".ds-mo{font-family:Inter,system-ui,sans-serif;max-width:520px}.ds-mo-date{margin:0;font-size:14px;font-weight:500;color:#A1A1AA}.ds-mo-head{display:flex;gap:12px;align-items:flex-start;margin-top:4px}.ds-mo-mark{flex:none;width:40px;height:40px;border-radius:6px;background:#1A1D24;color:#EDEDED;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center}.ds-mo h3{margin:0;font-size:22px;font-weight:600;letter-spacing:-.015em;color:#EDEDED}.ds-mo-d{margin:12px 0 0;line-height:1.625;color:#A1A1AA}"
     }
   ],
   "narrative": {
     "northStar": "The Night Lab",
-    "overview": "The site is a quiet, dark workspace. Near-black charcoal fills the page, graphite panels hold the work, and a single ember-coral light marks what matters: a result, a medal, the next thing to click. Nothing competes with the work itself; the lab is dim so the experiments glow.\n\nDensity is moderate and editorial: centred single columns up to a 72rem container, generous vertical breathing room between sections, and one idea per section. Type is a single family (Inter) carried by weight rather than by font changes. Components are calm and solid: soft-cornered surfaces, a gentle lift on hover, no gimmicks. Motion exists (entrance fades, a word-by-word tagline reveal) but should stay a supporting gesture, never the subject.",
+    "overview": "The site is a quiet, dark workspace. Near-black charcoal fills the page, graphite tones mark the rare raised surface, and a single ember-coral light marks what matters: the resume, the current role, a result. Nothing competes with the work; the lab is dim so the experiments glow.\n\nThe composition is editorial and left-aligned: a 72rem container, a sticky label column beside the content on desktop, rows separated by hairlines rather than boxed in cards. Hierarchy comes from one typeface (Inter) carried by size and weight. The home page leads with the person (name as the display line, a one-line role, what Khanh is looking for, then the resume) before any claims. Motion is a short entrance stagger and small hover shifts, never the subject.",
     "keyCharacteristics": [
-      "Dark-only: one theme, charcoal page with graphite surfaces.",
-      "One accent, ember coral, used sparingly.",
-      "One typeface, Inter, hierarchy through weight and size.",
-      "Soft corners (8px) on surfaces, full pills on chips and buttons.",
-      "Content-first: proof (medals, publication, research) carries the personality."
+      "Dark only: one theme, charcoal page, graphite tones for chips and small marks.",
+      "One accent, Ember Coral: one coral fill per screen, small coral marks allowed.",
+      "One typeface, Inter; hierarchy through weight and size.",
+      "Hairlines and bands, not cards.",
+      "Proof carries the personality, and every claim that can link to its evidence does."
     ],
     "rules": [
-      { "name": "The Ember Rule", "body": "Ember Coral is a signal, not a fill. It marks fewer than one in ten elements on any screen; if two things on a screen are coral, one of them is wrong.", "section": "colors" },
-      { "name": "The One Theme Rule", "body": "The site is dark only (<html class=\"dark\">). Do not introduce light sections or light-theme components.", "section": "colors" },
-      { "name": "The Weight-Not-Font Rule", "body": "Hierarchy comes from size and weight inside Inter. No second display face, no gradient text.", "section": "typography" },
-      { "name": "The Tone-First Rule", "body": "Separate layers by a tonal step first; a shadow alone never defines a surface on this dark page.", "section": "elevation" }
+      {
+        "name": "The Ember Rule",
+        "body": "Ember Coral fills at most one element per screen, and that element is the primary action. Small coral marks (outcome icons, current-role nodes, the active-nav underline, focus rings) are allowed because they signal state, not emphasis. A second coral fill on one screen is always wrong.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Theme Rule",
+        "body": "The site is dark only (`<html class=\"dark\">`). Do not introduce light sections or light-theme components.",
+        "section": "colors"
+      },
+      {
+        "name": "The Weight-Not-Font Rule",
+        "body": "Hierarchy comes from size and weight inside Inter. No second display face, no gradient text, no monospace costume.",
+        "section": "typography"
+      },
+      {
+        "name": "The Name-First Rule",
+        "body": "On the home page the largest type is the owner's name. A slogan or motto never takes the display line; the tagline \"Code. Create. Inspire.\" sits as a small Slate Line label at the foot of the first screen.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tone-First Rule",
+        "body": "Separate layers with a tonal step or a hairline. A shadow alone never defines a surface on this dark page, and a new component does not get one by default.",
+        "section": "elevation"
+      }
     ],
     "dos": [
-      "Do keep every new surface on the Night Page / Graphite Surface ramp, with Moon Text and Ash Text for copy.",
-      "Do keep Ember Coral (#FF7043) for nodes, icons, hover and a single emphasis per screen.",
-      "Do use Inter only, with 700 for headings, 500 for labels and 400 for body.",
-      "Do use 8px corners on surfaces and full pills on chips and buttons.",
-      "Do add a visible Ember Coral focus ring to anything interactive."
+      "**Do** keep every new surface on the Night Page / Graphite ramp, with Moon Text and Ash Text for copy.",
+      "**Do** keep one coral fill per screen (the primary action); small coral marks are fine for state.",
+      "**Do** use Inter only, with 700 headings, 600 titles, 500 labels and 400 body.",
+      "**Do** separate rows with Graphite Raised hairlines and lay inner pages out in bands.",
+      "**Do** give every interactive element the shared Ember Coral focus ring and at least a 44px touch target on phones.",
+      "**Do** link a claim to its evidence with an evidence link whenever the owner has supplied a URL.",
+      "**Do** keep the home action row above the fold on a 375×812 phone."
     ],
     "donts": [
-      "Don't reintroduce the legacy light neumorphic .btn (#F5F5F5 fill with white highlight shadows) from experience/_components/styles/card.css; it belongs to the old light theme.",
-      "Don't use the unused highlight-teal (#008080) or highlight-purple (#673AB7) tokens; the system has one accent.",
-      "Don't add light-theme sections or components; the site is dark only.",
-      "Don't use gradient text or a second typeface.",
-      "Don't rely on shadows alone to separate a surface from the page."
+      "**Don't** put a slogan or eyebrow label above or in place of the name on the home page.",
+      "**Don't** add a second coral-filled element to a screen.",
+      "**Don't** add drop shadows, glows or card stacks; this system is flat.",
+      "**Don't** reintroduce the legacy light neumorphic `.btn` or the card styles in `experience/_components/styles/card.css` and `portfolio/_components/styles/card.css`; they belong to the old light theme.",
+      "**Don't** use the unused `highlight-teal` (#008080) or `highlight-purple` (#673AB7) tokens.",
+      "**Don't** use gradient text, a second typeface, or emoji in place of icons.",
+      "**Don't** wrap list content in cards, put a thick coloured bar under a page title, or hide content behind accordions, overlays or one-per-screen scroll reveals.",
+      "**Don't** let an entrance animation start from fully invisible; it starts at 40% opacity so content never sits hidden."
     ]
   }
 }
