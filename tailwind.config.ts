@@ -90,6 +90,10 @@ const config = {
             transform: "translateZ(0) rotate(360deg)",
           },
         },
+        rise: {
+          from: { opacity: "0", transform: "translateY(0.35em)" },
+          to: { opacity: "1", transform: "none" },
+        },
         slide: {
           to: {
             transform: "translate(calc(100cqw - 100%), 0)",
@@ -101,6 +105,7 @@ const config = {
         "accordion-up": "accordion-up 0.2s ease-out",
         "spin-around": "spin-around calc(var(--speed) * 2) infinite linear",
         slide: "slide var(--speed) ease-in-out infinite alternate",
+        rise: "rise 700ms cubic-bezier(0.16, 1, 0.3, 1) both",
       },
     },
   },

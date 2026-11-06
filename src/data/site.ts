@@ -13,22 +13,44 @@ export const site = {
   shortName: "khanh",
   // One-line description used by search engines
   description:
-    "Personal website of Khanh N. Trinh, AI student at the University of South Florida",
+    "Personal website of Khanh N. Trinh, Computer Science student at the University of South Florida",
 
   // Images — files live in /public
   avatar: "/avatar.png",
   logo: "/logo.png",
 
-  // Big animated line on the home page
+  // Big headline at the top of the home page
   tagline: "Code. Create. Inspire.",
 
-  // "About Me" paragraph on the home page
-  aboutMe:
-    "I'm Khanh, an aspiring software engineer with a passion for problem-solving, artificial intelligence, and building innovative projects. My journey in tech began with a strong interest in mathematics and AI, which led me to explore AI and robotics projects during high school. I enjoy learning new technologies, experimenting with different ideas, and challenging myself through hands-on projects. I'm always looking to expand my skills in computer science, software development, and machine learning while building things that solve real-world problems.",
+  // First screen of the home page, under the tagline.
+  // In `intro`, your `name` (above) is shown in bold automatically.
+  hero: {
+    intro:
+      "I'm Khanh N. Trinh, a Computer Science student at the University of South Florida and a Research Assistant at ERA Lab, working on 3D sonar detection.",
+    // Up to three short proof points
+    proof: [
+      {
+        title: "3× International Gold Medal",
+        detail: "Computer-vision projects in Singapore, Korea and Croatia, 2025",
+      },
+      {
+        title: "Published in IJSRM",
+        detail: "Machine learning for hotel booking cancellations, 2025",
+      },
+      {
+        title: "Technical Lead, SCP",
+        detail: "Society of Competitive Programmers, University of South Florida",
+      },
+    ],
+    // Buttons. The resume button uses the first entry in `documents` below.
+    resumeLabel: "Resume (PDF)",
+    contactLabel: "Contact me",
+  },
 
-  // Paragraph under "My Skills" on the home page
-  skillsBlurb:
-    "I'm currently building my skills in computer science, software development, and artificial intelligence. I'm particularly interested in machine learning, deep learning, and exploring how AI can be applied to solve real-world problems. Through hands-on projects and continuous learning, I'm working to strengthen my programming fundamentals and expand my experience across different areas of technology.",
+  // "About" paragraph on the home page. Keep it to two or three sentences.
+  // (The skills list under it is read from "Technical Skills" in cv.json.)
+  aboutMe:
+    "My interest in mathematics and AI led me to AI and robotics projects in high school, and I've been building ever since. I learn best hands-on: picking up new tools, testing ideas, and making things that solve real-world problems.",
 
   // Heading on the /about page
   aboutHeading: "Discover my story",

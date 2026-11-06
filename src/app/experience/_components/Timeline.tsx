@@ -17,6 +17,7 @@ const Timeline: React.FC<{ experiences: any[] }> = ({ experiences }) => {
             description={experience.description}
             techStack={experience.techStack}
             bulletPoints={experience.bulletPoints}
+            logo={experience.logo}
             isLeft={index % 2 !== 0}
           />
         ))}

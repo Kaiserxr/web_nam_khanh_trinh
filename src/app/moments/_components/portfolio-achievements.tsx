@@ -31,7 +31,7 @@ const achievements: Achievement[] = [
     title: "Starting at the University of South Florida",
     date: "Fall 2026",
     description:
-      "Began my B.S. in Artificial Intelligence at the University of South Florida in Tampa, Florida.",
+      "Began my B.S. in Computer Science at the University of South Florida in Tampa, Florida.",
     image: "/moments/USF.png",
   },
   {

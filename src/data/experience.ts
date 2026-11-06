@@ -5,10 +5,26 @@ export interface Experience {
   description: string;
   techStack: string[];
   bulletPoints: string[];
+  // Optional organization logo, a file in /public (e.g. "/logos/era-lab.png")
+  logo?: string;
 }
 
 // Add one object per role, newest first. Copy an entry to add more.
 export const experiences: Experience[] = [
+  {
+    date: "October 2026 - Present",
+    title: "Undergraduate Research Assistant",
+    company: "ERA Lab, University of South Florida",
+    description:
+      "Undergraduate Research Assistant at ERA Lab (University of South Florida), working on 3D sonar detection with point clouds, sparse voxel attention, and fusion architectures.",
+    techStack: ["3D Sonar Detection", "Point Clouds", "Sparse Voxel Attention", "Fusion Architectures", "Deep Learning"],
+    bulletPoints: [
+      "Research on 3D object detection from sonar data.",
+      "Working with point-cloud representations and sparse voxel attention models.",
+      "Exploring fusion architectures for combining sensor inputs.",
+    ],
+    logo: "/logos/era-lab.png",
+  },
   {
     date: "October 2026 - Present",
     title: "Technical Lead",

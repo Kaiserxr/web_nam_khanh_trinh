@@ -17,6 +17,7 @@ interface TimelineNodeProps {
   techStack: string[];
   bulletPoints?: string[];
   isLeft?: boolean;
+  logo?: string;
 }
 
 const TimelineNode: React.FC<TimelineNodeProps> = ({
@@ -27,6 +28,7 @@ const TimelineNode: React.FC<TimelineNodeProps> = ({
   techStack,
   bulletPoints = [],
   isLeft = false,
+  logo,
 }) => {
   const [showAll, setShowAll] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
@@ -87,7 +89,22 @@ const TimelineNode: React.FC<TimelineNodeProps> = ({
           >
             {title}
           </h4>
-          <p className="text-sm text-dark-grey">{company}</p>
+          <p
+            className={`flex items-center gap-2 text-sm text-dark-grey ${
+              isLeft ? "md:flex-row-reverse" : ""
+            }`}
+          >
+            {logo && (
+              <img
+                src={logo}
+                alt=""
+                width={20}
+                height={20}
+                className="h-5 w-5 rounded-sm object-contain"
+              />
+            )}
+            <span>{company}</span>
+          </p>
           <p className="text-sm text-dark-grey">{date}</p>
           <p className="mt-2 text-dark-grey">{description}</p>
           <div

@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-06T00:00:00Z",
+  "title": "Design System: Khanh N. Trinh",
+  "extensions": {
+    "colorMeta": {
+      "night-page": { "role": "neutral", "displayName": "Night Page", "canonical": "#0F1115", "tonalRamp": ["#08090B", "#0F1115", "#1A1D24", "#2A2E36", "#454A54", "#6B717C", "#A1A1AA", "#EDEDED"] },
+      "graphite-surface": { "role": "neutral", "displayName": "Graphite Surface", "canonical": "#1A1D24", "tonalRamp": ["#0F1115", "#1A1D24", "#23272F", "#2A2E36", "#3A3F49", "#565C67", "#7D838E", "#B5BAC2"] },
+      "graphite-raised": { "role": "neutral", "displayName": "Graphite Raised", "canonical": "#2A2E36", "tonalRamp": ["#14161B", "#1E2127", "#2A2E36", "#3A3F49", "#4D535E", "#686E79", "#8E949E", "#C3C7CD"] },
+      "ember-coral": { "role": "primary", "displayName": "Ember Coral", "canonical": "#FF7043", "tonalRamp": ["#4A1A0C", "#7A2A13", "#B23E1D", "#E5572C", "#FF7043", "#FF936F", "#FFBAA2", "#FFE2D8"] },
+      "moon-text": { "role": "neutral", "displayName": "Moon Text", "canonical": "#EDEDED", "tonalRamp": ["#2E2E2E", "#4F4F4F", "#737373", "#999999", "#BDBDBD", "#D6D6D6", "#EDEDED", "#FAFAFA"] },
+      "ash-text": { "role": "neutral", "displayName": "Ash Text", "canonical": "#A1A1AA", "tonalRamp": ["#27272A", "#3F3F46", "#52525B", "#71717A", "#A1A1AA", "#C4C4CA", "#D4D4D8", "#F4F4F5"] },
+      "slate-line": { "role": "neutral", "displayName": "Slate Line", "canonical": "#9AA4AE", "tonalRamp": ["#22272C", "#363E46", "#4D5761", "#6A747F", "#9AA4AE", "#B6BEC6", "#D1D7DC", "#EDF0F2"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Page-defining titles; home tagline reveal." },
+      "headline": { "displayName": "Headline", "purpose": "Page titles." },
+      "title": { "displayName": "Title", "purpose": "Card titles and timeline roles." },
+      "body": { "displayName": "Body", "purpose": "Paragraphs and descriptions, 65-75ch measure." },
+      "label": { "displayName": "Label", "purpose": "Nav links, dates, organisations, chips." }
+    },
+    "shadows": [
+      { "name": "card-rest", "value": "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)", "purpose": "Resting project and timeline cards." },
+      { "name": "card-hover", "value": "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)", "purpose": "Interactive card hover, paired with translateY(-4px)." }
+    ],
+    "motion": [
+      { "name": "entrance", "value": "opacity + translateY, 0.5-1s ease-out", "purpose": "Section and timeline card entrances (framer-motion)." },
+      { "name": "hover-color", "value": "color 150ms cubic-bezier(0.4, 0, 0.2, 1)", "purpose": "Nav and link hover to Ember Coral." },
+      { "name": "card-lift", "value": "transform 300ms", "purpose": "Card hover lift." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" },
+      { "name": "container-max", "value": "1400px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Pill shimmer button for the single primary action, e.g. View PDF on the CV page.",
+      "html": "<button class=\"ds-btn-primary\">View PDF</button>",
+      "css": ".ds-btn-primary { background: #000; color: #fff; padding: 12px 24px; border: 1px solid rgba(255,255,255,0.1); border-radius: 9999px; font: 500 0.875rem Inter, system-ui, sans-serif; box-shadow: inset 0 -8px 10px #ffffff1f; cursor: pointer; transition: box-shadow 300ms ease-in-out, transform 300ms ease-in-out; } .ds-btn-primary:hover { box-shadow: inset 0 -6px 10px #ffffff3f; } .ds-btn-primary:active { transform: translateY(1px); } .ds-btn-primary:focus-visible { outline: 2px solid #FF7043; outline-offset: 3px; }"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Fixed top bar: logo and short name left, text links right, coral on hover.",
+      "html": "<nav class=\"ds-nav\"><span class=\"ds-nav-brand\">khanh</span><ul class=\"ds-nav-links\"><li><a href=\"#\">About</a></li><li><a href=\"#\">CV &amp; Resume</a></li><li><a href=\"#\">Experience</a></li><li><a href=\"#\">Contact</a></li></ul></nav>",
+      "css": ".ds-nav { display: flex; justify-content: space-between; align-items: center; padding: 16px; background: #0F1115; font-family: Inter, system-ui, sans-serif; } .ds-nav-brand { font-size: 1.5rem; font-weight: 700; color: #EDEDED; } .ds-nav-links { display: flex; gap: 32px; list-style: none; margin: 0; padding: 0; } .ds-nav-links a { color: #EDEDED; font-weight: 500; text-decoration: none; transition: color 150ms; } .ds-nav-links a:hover { color: #FF7043; } .ds-nav-links a:focus-visible { outline: 2px solid #FF7043; outline-offset: 4px; border-radius: 4px; }"
+    },
+    {
+      "name": "Chip",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Small pill tag for tech stack items.",
+      "html": "<span class=\"ds-chip\">Point Clouds</span>",
+      "css": ".ds-chip { display: inline-block; background: #2A2E36; color: #EDEDED; font: 500 0.75rem Inter, system-ui, sans-serif; padding: 4px 8px; border-radius: 9999px; }"
+    },
+    {
+      "name": "Project Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Graphite card with icon well, title and description; lifts on hover.",
+      "html": "<div class=\"ds-card\"><div class=\"ds-card-well\"><svg width=\"48\" height=\"48\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#FF7043\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z\"/><circle cx=\"12\" cy=\"12\" r=\"3\"/></svg></div><div class=\"ds-card-body\"><h3>Diabetic Retinopathy Detection</h3><p>ML pipeline for retinal images. Gold Medal, Singapore.</p></div></div>",
+      "css": ".ds-card { width: 280px; background: #1A1D24; border-radius: 8px; overflow: hidden; box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); transition: transform 300ms, box-shadow 300ms; font-family: Inter, system-ui, sans-serif; } .ds-card:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1); } .ds-card-well { height: 140px; display: flex; align-items: center; justify-content: center; background: rgba(15,17,21,0.6); } .ds-card-body { padding: 16px; } .ds-card-body h3 { margin: 0 0 8px; color: #EDEDED; font-size: 1.25rem; font-weight: 500; } .ds-card-body p { margin: 0; color: #A1A1AA; line-height: 1.5; }"
+    },
+    {
+      "name": "Timeline Entry",
+      "kind": "custom",
+      "refersTo": "timeline-node",
+      "description": "Signature experience entry: coral node on a slate spine with a graphite card.",
+      "html": "<div class=\"ds-tl\"><span class=\"ds-tl-node\"></span><div class=\"ds-tl-card\"><h4>Research Assistant</h4><p class=\"ds-tl-meta\">ERA Lab</p><p class=\"ds-tl-meta\">November 2026 - Present</p><p>3D sonar detection with point clouds and sparse voxel attention.</p></div></div>",
+      "css": ".ds-tl { position: relative; padding-left: 48px; border-left: 2px solid rgba(154,164,174,0.2); font-family: Inter, system-ui, sans-serif; } .ds-tl-node { position: absolute; left: -17px; top: 16px; width: 32px; height: 32px; border-radius: 9999px; background: #FF7043; } .ds-tl-card { background: #1A1D24; border-radius: 8px; padding: 16px 24px; color: #A1A1AA; box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1); } .ds-tl-card h4 { margin: 0 0 4px; color: #EDEDED; font-size: 1.25rem; font-weight: 700; } .ds-tl-meta { margin: 0; font-size: 0.875rem; } .ds-tl-card p:last-child { margin-top: 8px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Night Lab",
+    "overview": "The site is a quiet, dark workspace. Near-black charcoal fills the page, graphite panels hold the work, and a single ember-coral light marks what matters: a result, a medal, the next thing to click. Nothing competes with the work itself; the lab is dim so the experiments glow.\n\nDensity is moderate and editorial: centred single columns up to a 72rem container, generous vertical breathing room between sections, and one idea per section. Type is a single family (Inter) carried by weight rather than by font changes. Components are calm and solid: soft-cornered surfaces, a gentle lift on hover, no gimmicks. Motion exists (entrance fades, a word-by-word tagline reveal) but should stay a supporting gesture, never the subject.",
+    "keyCharacteristics": [
+      "Dark-only: one theme, charcoal page with graphite surfaces.",
+      "One accent, ember coral, used sparingly.",
+      "One typeface, Inter, hierarchy through weight and size.",
+      "Soft corners (8px) on surfaces, full pills on chips and buttons.",
+      "Content-first: proof (medals, publication, research) carries the personality."
+    ],
+    "rules": [
+      { "name": "The Ember Rule", "body": "Ember Coral is a signal, not a fill. It marks fewer than one in ten elements on any screen; if two things on a screen are coral, one of them is wrong.", "section": "colors" },
+      { "name": "The One Theme Rule", "body": "The site is dark only (<html class=\"dark\">). Do not introduce light sections or light-theme components.", "section": "colors" },
+      { "name": "The Weight-Not-Font Rule", "body": "Hierarchy comes from size and weight inside Inter. No second display face, no gradient text.", "section": "typography" },
+      { "name": "The Tone-First Rule", "body": "Separate layers by a tonal step first; a shadow alone never defines a surface on this dark page.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep every new surface on the Night Page / Graphite Surface ramp, with Moon Text and Ash Text for copy.",
+      "Do keep Ember Coral (#FF7043) for nodes, icons, hover and a single emphasis per screen.",
+      "Do use Inter only, with 700 for headings, 500 for labels and 400 for body.",
+      "Do use 8px corners on surfaces and full pills on chips and buttons.",
+      "Do add a visible Ember Coral focus ring to anything interactive."
+    ],
+    "donts": [
+      "Don't reintroduce the legacy light neumorphic .btn (#F5F5F5 fill with white highlight shadows) from experience/_components/styles/card.css; it belongs to the old light theme.",
+      "Don't use the unused highlight-teal (#008080) or highlight-purple (#673AB7) tokens; the system has one accent.",
+      "Don't add light-theme sections or components; the site is dark only.",
+      "Don't use gradient text or a second typeface.",
+      "Don't rely on shadows alone to separate a surface from the page."
+    ]
+  }
+}

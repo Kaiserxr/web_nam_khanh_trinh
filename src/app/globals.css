@@ -66,4 +66,8 @@
   body {
     @apply bg-background text-foreground;
   }
+  ::selection {
+    background: #ff7043;
+    color: #0f1115;
+  }
 }

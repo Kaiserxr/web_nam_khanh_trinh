@@ -1,99 +1,99 @@
-"use client";
-
 import React from "react";
-import { Eye, BarChart3, Bot, TrainFront, type LucideIcon } from "lucide-react";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+import Link from "next/link";
+import { Medal, BookOpen, Radar, type LucideIcon } from "lucide-react";
+import { ArrowRightIcon } from "@radix-ui/react-icons";
+import { featuredWork, type FeaturedWork } from "@/data/featured";
 
-// Projects shown in the carousel on the home page.
-// Give a project an "image" (a file in /public) to show a picture instead of the icon.
-const projects: {
-  title: string;
-  description: string;
-  image?: string;
-  icon: LucideIcon;
-}[] = [
-  {
-    title: "Diabetic Retinopathy Detection",
-    description:
-      "A machine-learning pipeline that detects diabetic retinopathy from retinal images. Gold Medal, Advanced Innovation Global Competition, Singapore.",
-    icon: Eye,
-  },
-  {
-    title: "Hotel Booking Cancellation Prediction",
-    description:
-      "Published research (IJSRM) comparing five ML algorithms on 36,300 bookings; Random Forest reached 91.0% accuracy.",
-    icon: BarChart3,
-  },
-  {
-    title: "AI-Activated Robotic Arm",
-    description:
-      "A robotic arm driven by YOLO object detection. Gold Medal, World Invention Creativity Olympic and Conference, Korea.",
-    icon: Bot,
-  },
-  {
-    title: "ECO SMART RAIL TRANSIT",
-    description:
-      "An AI railway safety monitoring system that detects hazards on the tracks. Gold Medal, INOVA 2025, Croatia.",
-    icon: TrainFront,
-  },
-];
+const outcomeIcon: Record<FeaturedWork["outcomeKind"], LucideIcon> = {
+  award: Medal,
+  publication: BookOpen,
+  current: Radar,
+};
 
-const FeaturedProjects: React.FC = () => {
+const SelectedWork: React.FC = () => {
+  if (featuredWork.length === 0) return null;
+
   return (
-    <section className="py-12">
-      <div className="max-w-6xl mx-auto px-4 text-center relative">
-        <h2 className="text-3xl font-bold text-off-black">
-          Projects and Works
-        </h2>
-        <Carousel className="relative mt-8" opts={{ loop: true }}>
-          <CarouselContent className="flex">
-            {projects.map((project, index) => (
-              <CarouselItem
-                key={index}
-                className="relative flex-shrink-0 basis-full sm:basis-[48%] lg:basis-[30%]"
+    <section
+      aria-labelledby="selected-work"
+      className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8"
+    >
+      <div className="grid gap-x-12 gap-y-8 lg:grid-cols-[15rem_minmax(0,1fr)]">
+        <header className="self-start lg:sticky lg:top-28">
+          <h2
+            id="selected-work"
+            className="text-3xl font-bold tracking-tight text-off-black sm:text-4xl"
+          >
+            Selected work
+          </h2>
+          <Link
+            href="/experience"
+            className="group mt-4 inline-flex items-center gap-2 rounded-sm text-sm font-medium text-dark-grey transition-colors hover:text-off-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-highlight-orange"
+          >
+            Full experience
+            <ArrowRightIcon
+              className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
+              aria-hidden="true"
+            />
+          </Link>
+        </header>
+
+        <ol className="divide-y divide-light-grey border-y border-light-grey">
+          {featuredWork.map((work) => {
+            const Icon = outcomeIcon[work.outcomeKind];
+            return (
+              <li
+                key={work.title}
+                className="grid gap-x-8 gap-y-3 py-8 md:grid-cols-[8.5rem_minmax(0,1fr)]"
               >
-                <div className="overflow-hidden border rounded-lg shadow-lg bg-off-white hover:shadow-xl transition-shadow transform hover:-translate-y-1 transition-transform duration-300 h-96">
-                  {project.image ? (
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-48 object-cover"
-                    />
-                  ) : (
-                    <div className="w-full h-48 flex items-center justify-center bg-page/60">
-                      <project.icon className="w-20 h-20 text-highlight-orange" />
-                    </div>
-                  )}
-                  <div className="p-4 h-48 flex flex-col justify-between">
-                    <h3 className="text-xl font-medium text-off-black">
-                      {project.title}
-                    </h3>
-                    <p className="text-dark-grey mt-2 overflow-hidden overflow-ellipsis">
-                      {project.description}
+                <div className="flex gap-2 text-sm md:block">
+                  <p className="font-medium tabular-nums text-off-black">
+                    {work.date}
+                  </p>
+                  {work.place && (
+                    <p className="text-dark-grey md:mt-1">
+                      <span className="md:hidden" aria-hidden="true">
+                        ·{" "}
+                      </span>
+                      {work.place}
                     </p>
-                  </div>
+                  )}
                 </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
 
-          {/* Carousel Navigation for larger screens */}
-          <CarouselPrevious className="hidden sm:flex absolute -left-8 top-1/2 transform -translate-y-1/2 bg-off-white text-off-black p-2 rounded-full shadow-lg cursor-pointer" />
-          <CarouselNext className="hidden sm:flex absolute -right-8 top-1/2 transform -translate-y-1/2 bg-off-white text-off-black p-2 rounded-full shadow-lg cursor-pointer" />
-
-          {/* Carousel Navigation for mobile screens */}
-          <CarouselPrevious className="flex sm:hidden absolute left-2 top-1/2 transform -translate-y-1/2 bg-off-white text-off-black p-2 rounded-full shadow-lg cursor-pointer" />
-          <CarouselNext className="flex sm:hidden absolute right-2 top-1/2 transform -translate-y-1/2 bg-off-white text-off-black p-2 rounded-full shadow-lg cursor-pointer" />
-        </Carousel>
+                <div>
+                  <h3 className="text-xl font-semibold tracking-tight text-off-black sm:text-2xl">
+                    {work.title}
+                  </h3>
+                  <p className="mt-2 flex items-start gap-2 text-sm font-medium text-off-black">
+                    <Icon
+                      className="mt-px h-4 w-4 shrink-0 text-highlight-orange"
+                      aria-hidden="true"
+                    />
+                    {work.outcome}
+                  </p>
+                  <p className="mt-3 max-w-[62ch] leading-relaxed text-dark-grey">
+                    {work.description}
+                  </p>
+                  {work.metrics && work.metrics.length > 0 && (
+                    <p className="mt-4 flex flex-wrap gap-x-6 gap-y-1 font-semibold tabular-nums text-off-black">
+                      {work.metrics.map((m) => (
+                        <span key={m}>{m}</span>
+                      ))}
+                    </p>
+                  )}
+                  {work.tools && work.tools.length > 0 && (
+                    <p className="mt-3 text-sm text-cool-grey">
+                      {work.tools.join(" · ")}
+                    </p>
+                  )}
+                </div>
+              </li>
+            );
+          })}
+        </ol>
       </div>
     </section>
   );
 };
 
-export default FeaturedProjects;
+export default SelectedWork;
