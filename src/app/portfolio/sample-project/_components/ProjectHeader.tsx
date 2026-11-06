@@ -18,18 +18,20 @@ const ProjectHeader: React.FC<ProjectHeaderProps> = ({
   websiteLink,
 }) => {
   return (
-    <section className="max-w-6xl mx-auto px-4 py-8 text-center">
-      <h1 className="text-5xl font-bold text-off-black">{title}</h1>
-      <p className="text-xl text-dark-grey mt-4">{subtitle}</p>
+    <section className="mx-auto max-w-6xl px-4 pt-12 sm:px-6 lg:px-8">
+      <h1 className="text-balance text-[clamp(2.5rem,6vw,4rem)] font-bold leading-[1.02] tracking-[-0.03em] text-off-black">
+        {title}
+      </h1>
+      <p className="mt-5 max-w-[60ch] text-lg leading-relaxed text-dark-grey">{subtitle}</p>
       {videoUrl ? (
         <div
-          className="mt-8 relative mx-auto w-full md:w-3/4"
+          className="relative mt-10 w-full"
           style={{ paddingBottom: "50%" }}
         >
           <iframe
             src={videoUrl}
             title="Video Demo"
-            className="absolute top-0 left-0 w-full h-full rounded-lg shadow-lg"
+            className="absolute left-0 top-0 h-full w-full rounded-lg"
             allowFullScreen
           ></iframe>
         </div>
@@ -37,7 +39,7 @@ const ProjectHeader: React.FC<ProjectHeaderProps> = ({
         <img
           src={heroImageUrl}
           alt={title}
-          className="w-full h-64 object-cover mt-8 rounded-lg shadow-lg"
+          className="mt-10 h-72 w-full rounded-lg bg-off-white object-cover"
         />
       )}
       {websiteLink && (
@@ -45,7 +47,7 @@ const ProjectHeader: React.FC<ProjectHeaderProps> = ({
           href={websiteLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block mt-8 px-8 py-3 bg-highlight-orange text-white font-medium rounded-full shadow-lg transform transition-transform duration-300 ease-in-out hover:scale-110 hover:shadow-md hover:shadow-highlight-orange/50"
+          className="mt-8 inline-flex items-center rounded-full bg-highlight-orange px-6 py-3 font-semibold text-page transition-colors hover:bg-[#FF8A65] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-highlight-orange"
         >
           Visit Website
         </a>

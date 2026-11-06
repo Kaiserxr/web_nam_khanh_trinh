@@ -1,60 +1,60 @@
 import React from "react";
-import { GitHubLogoIcon, LinkedInLogoIcon } from "@radix-ui/react-icons";
-import { site, findSocial } from "@/data/site";
+import Link from "next/link";
+import { site } from "@/data/site";
+import SocialLinks, { focusRing } from "@/components/SocialLinks";
+
+const FOOTER_LINKS = [
+  { href: "/about", label: "About" },
+  { href: "/experience", label: "Experience" },
+  { href: "/portfolio", label: "Portfolio" },
+  { href: "/moments", label: "Moments" },
+  { href: "/cv", label: "CV & Resume" },
+  { href: "/contact", label: "Contact" },
+];
 
 const Footer: React.FC = () => {
-  const github = findSocial("GitHub");
-  const linkedin = findSocial("LinkedIn");
+  const resume = site.documents[0];
 
   return (
-    <footer className="bg-off-white text-cool-grey py-6">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          {/* Navigation Links */}
-          <div className="flex space-x-4 mb-4 md:mb-0 text-sm">
-            <a href="/about" className="hover:text-highlight-orange">
-              About
-            </a>
-            <a href="/portfolio" className="hover:text-highlight-orange">
-              Portfolio
-            </a>
-            <a href="/experience" className="hover:text-highlight-orange">
-              Experience
-            </a>
-            <a href="/contact" className="hover:text-highlight-orange">
-              Contact
-            </a>
-          </div>
-
-          {/* Social Media Icons */}
-          <div className="flex space-x-4 mb-4 md:mb-0">
-            {github && (
-              <a
-                href={github.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-highlight-orange"
-              >
-                <GitHubLogoIcon width={20} height={20} />
-              </a>
-            )}
-            {linkedin && (
-              <a
-                href={linkedin.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-highlight-orange"
-              >
-                <LinkedInLogoIcon width={20} height={20} />
-              </a>
-            )}
-          </div>
-
-          {/* Copyright Notice */}
-          <div className="text-sm text-center md:text-right">
-            &copy; {new Date().getFullYear()} {site.name}. All rights reserved.
-          </div>
+    <footer className="border-t border-light-grey bg-page">
+      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-[minmax(0,1fr)_auto] lg:px-8">
+        <div>
+          <p className="text-lg font-semibold text-off-black">{site.name}</p>
+          <p className="mt-1 text-sm text-dark-grey">
+            Computer Science, University of South Florida
+          </p>
+          <SocialLinks className="mt-6" emailAsAddress />
         </div>
+
+        <nav aria-label="Footer">
+          <ul className="grid grid-cols-2 gap-x-10 gap-y-3 text-sm">
+            {FOOTER_LINKS.map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className={`rounded-sm text-dark-grey transition-colors hover:text-off-black ${focusRing}`}
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+            {resume && (
+              <li>
+                <a
+                  href={resume.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`rounded-sm text-dark-grey transition-colors hover:text-off-black ${focusRing}`}
+                >
+                  Resume (PDF)
+                </a>
+              </li>
+            )}
+          </ul>
+        </nav>
+      </div>
+      <div className="mx-auto max-w-6xl px-4 pb-8 text-xs text-cool-grey sm:px-6 lg:px-8">
+        &copy; {new Date().getFullYear()} {site.name}
       </div>
     </footer>
   );

@@ -1,12 +1,7 @@
-"use client";
-
-import { useEffect } from "react";
+import React from "react";
 import Image from "next/image";
-import { motion, useAnimation, type Variants } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import { Trophy } from "lucide-react";
+import { Band } from "@/components/PageShell";
 
-// Define the Achievement type
 type Achievement = {
   id: string;
   title: string;
@@ -16,7 +11,7 @@ type Achievement = {
 };
 
 // Add your moments here, newest first. Put photos in /public/moments.
-// Leave out "image" to show a trophy icon instead of a photo.
+// "image" is optional (a photo or logo); leave it out for a text-only moment.
 const achievements: Achievement[] = [
   {
     id: "7",
@@ -72,107 +67,59 @@ const achievements: Achievement[] = [
   },
 ];
 
-// Animation variants
-const cardVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    y: 100,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.8,
-      ease: [0.22, 1, 0.36, 1], // Custom cubic-bezier for smooth entrance
-    },
-  },
-};
-
-const AchievementCard = ({
-  achievement,
-  index,
-}: {
-  achievement: Achievement;
-  index: number;
-}) => {
-  const controls = useAnimation();
-  const [ref, inView] = useInView({
-    threshold: 0.25,
-    triggerOnce: true,
-  });
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
-  }, [controls, inView]);
-
-  // Alternate layout direction for even/odd items
-  const isEven = index % 2 === 0;
-
-  return (
-    <motion.div
-      ref={ref}
-      variants={cardVariants}
-      initial="hidden"
-      animate={controls}
-      className={`mb-32 first:mt-16 last:mb-16 scroll-mt-16`}
-    >
-      <div
-        className={`flex flex-col ${
-          isEven ? "md:flex-row" : "md:flex-row-reverse"
-        } gap-8 items-center`}
-      >
-        <div className="w-full md:w-1/2 relative">
-          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-lg border border-border bg-muted p-2">
-            {achievement.image ? (
-              <Image
-                src={achievement.image}
-                alt={achievement.title}
-                fill
-                className="object-contain rounded-md p-4"
-              />
-            ) : (
-              <div className="flex h-full w-full items-center justify-center">
-                <Trophy className="h-24 w-24 text-highlight-orange" />
-              </div>
-            )}
-          </div>
-        </div>
-
-        <div className="w-full md:w-1/2 space-y-4">
-          <div className="space-y-2">
-            <span className="inline-block px-3 py-1 text-sm rounded-full bg-primary/10 text-primary">
-              {achievement.date}
-            </span>
-            <h3 className="text-2xl md:text-3xl font-bold">
-              {achievement.title}
-            </h3>
-          </div>
-
-          <p className="text-muted-foreground leading-relaxed">
-            {achievement.description}
-          </p>
-        </div>
-      </div>
-    </motion.div>
-  );
-};
+// Group moments by the year at the end of their date ("Fall 2026" -> 2026).
+function byYear(items: Achievement[]) {
+  const groups: { year: string; items: Achievement[] }[] = [];
+  for (const item of items) {
+    const year = item.date.match(/\d{4}/)?.[0] ?? "Earlier";
+    const last = groups[groups.length - 1];
+    if (last && last.year === year) last.items.push(item);
+    else groups.push({ year, items: [item] });
+  }
+  return groups;
+}
 
 export default function PortfolioAchievements() {
   return (
-    <section className="px-4 md:px-6">
-      <div className="container mx-auto max-w-5xl">
-        <div className="space-y-16">
-          {achievements.map((achievement, index) => (
-            <AchievementCard
-              key={achievement.id}
-              achievement={achievement}
-              index={index}
-            />
-          ))}
-        </div>
-      </div>
-    </section>
+    <div className="divide-y divide-light-grey">
+      {byYear(achievements).map((group) => (
+        <Band
+          key={group.year}
+          id={`moments-${group.year}`}
+          label={<span className="tabular-nums">{group.year}</span>}
+          className="py-12"
+        >
+          <ol className="space-y-12">
+            {group.items.map((a) => (
+              <li
+                key={a.id}
+                className="grid gap-6 sm:grid-cols-[minmax(0,1fr)_11rem] md:grid-cols-[minmax(0,1fr)_14rem]"
+              >
+                <div>
+                  <p className="text-sm font-medium text-dark-grey">{a.date}</p>
+                  <h3 className="mt-1 text-xl font-semibold tracking-tight text-off-black sm:text-2xl">
+                    {a.title}
+                  </h3>
+                  <p className="mt-3 max-w-[60ch] leading-relaxed text-dark-grey">
+                    {a.description}
+                  </p>
+                </div>
+                {a.image && (
+                  <div className="relative aspect-[4/3] w-full max-w-[14rem] overflow-hidden rounded-lg bg-off-white">
+                    <Image
+                      src={a.image}
+                      alt=""
+                      fill
+                      sizes="(min-width: 768px) 224px, 176px"
+                      className="object-contain p-3"
+                    />
+                  </div>
+                )}
+              </li>
+            ))}
+          </ol>
+        </Band>
+      ))}
+    </div>
   );
 }

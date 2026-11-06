@@ -130,7 +130,11 @@ Token naming in `tailwind.config.ts` is inherited from an earlier light theme an
 
 ## Layout
 
-Centred, single-column composition. Section content sits in `max-w-6xl` (72rem) containers with 16px side padding on mobile, scaling to 24–32px; long text sits in `max-w-4xl`. Sections are separated by 48px of vertical space. The navbar is fixed to the top over the page colour. The experience timeline is the one two-column pattern: a central spine with cards alternating left and right at ≥768px, collapsing to a single stacked column on mobile. Breakpoints follow Tailwind defaults (640 / 768 / 1024 / 1280px; container caps at 1400px).
+Left-aligned, editorial composition inside a `max-w-6xl` (72rem) container with 16px side padding on mobile, scaling to 24–32px. Body text holds a ~60–68ch measure.
+
+Every inner page follows the same frame (`src/components/PageShell.tsx`): a fixed navbar, a **page header** (large h1, optional one-line lede in Ash Text, optional actions, then a 1px Graphite Raised hairline), and content laid out in **bands**: a 15rem label column (sticky on desktop) beside a fluid content column, collapsing to a single column below 1024px. Inside a band, list rows use a narrower meta column (dates, categories: 8.5–11.5rem) beside the content. Rows are separated by hairlines, not cards.
+
+Breakpoints follow Tailwind defaults (640 / 768 / 1024 / 1280px).
 
 ## Elevation & Depth
 
@@ -165,18 +169,27 @@ Gently curved surfaces (8px radius) for cards, panels and images; fully rounded 
 - **Internal Padding:** 16–24px.
 
 ### Navigation
-- **Style:** fixed top bar on Night Page; logo + lowercase short name ("khanh", 1.5rem, 700) on the left; six text links (500 weight) on the right with 32px gaps.
-- **States:** Moon Text at rest, Ember Coral on hover via a colour transition.
-- **Mobile:** below 768px the links collapse behind a hamburger into a right-aligned vertical list that expands by height.
+- **Style:** fixed top bar on translucent Night Page with a hairline bottom border; logo + lowercase short name on the left; six 0.875rem/500 text links on the right.
+- **States:** Ash Text at rest, Moon Text on hover; the current page is Moon Text with a 2px Ember Coral underline sitting on the bar's bottom edge (`aria-current="page"`).
+- **Mobile:** below 768px a labelled 44px menu button opens a full-width list; the current page is marked with a small coral dot.
+
+### Links to profiles
+- One component (`SocialLinks`) renders every profile in `site.socials` plus email, with an icon per known network (GitHub, LinkedIn, Hugging Face, X, YouTube) and a generic link icon otherwise. It appears in the home hero, the home About band, the /about page, the footer, and as full rows on /contact. New profiles are added in `site.ts` only.
+
+### Page header
+- Large h1 (700, clamp 2.5–4rem, -0.03em), optional lede (1.125rem Ash Text, 60ch), optional actions, hairline below. Never a coloured bar under the title.
+
+### Footer
+- Hairline top border on Night Page; name and one-line role, profile links, a two-column link list (including Resume PDF), and a small copyright line.
 
 ### Experience Timeline (signature)
-A vertical Slate Line spine with 32px Ember Coral nodes. Each role is a Graphite Surface card with title, organisation (with an optional 20px logo), date, description, two visible tech chips plus "Show All", and an info button that overlays key highlights. Cards alternate sides on desktop and stack on mobile.
+A single left-hand spine (1px Graphite Raised) with the date in a right-aligned column beside it. Nodes are 14px circles: filled Ember Coral for a current role, hollow Slate Line for past ones. Each entry shows title, organisation with an optional 20px logo, description (skipped when it repeats the first bullet), all bullets with short dash markers, and every tool as a chip. Nothing is hidden behind toggles.
 
 ## Do's and Don'ts
 
 ### Do:
 - **Do** keep every new surface on the Night Page / Graphite Surface ramp, with Moon Text and Ash Text for copy.
-- **Do** keep Ember Coral (#FF7043) for nodes, icons, hover and a single emphasis per screen.
+- **Do** keep Ember Coral (#FF7043) for the primary button, the current-page underline, current-role nodes and small outcome icons.
 - **Do** use Inter only, with 700 for headings, 500 for labels and 400 for body.
 - **Do** use 8px corners on surfaces and full pills on chips and buttons.
 - **Do** add a visible Ember Coral focus ring to anything interactive.
@@ -187,3 +200,5 @@ A vertical Slate Line spine with 32px Ember Coral nodes. Each role is a Graphite
 - **Don't** add light-theme sections or components; the site is dark only.
 - **Don't** use gradient text or a second typeface.
 - **Don't** rely on shadows alone to separate a surface from the page.
+- **Don't** wrap list content in cards or put a thick coloured bar under page titles; use hairlines and the band layout.
+- **Don't** hide content behind accordions or info overlays; recruiters skim.

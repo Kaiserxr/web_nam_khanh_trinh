@@ -16,7 +16,7 @@ const SelectedWork: React.FC = () => {
   return (
     <section
       aria-labelledby="selected-work"
-      className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8"
+      className="mx-auto max-w-6xl scroll-mt-24 px-4 py-12 sm:px-6 lg:px-8"
     >
       <div className="grid gap-x-12 gap-y-8 lg:grid-cols-[15rem_minmax(0,1fr)]">
         <header className="self-start lg:sticky lg:top-28">

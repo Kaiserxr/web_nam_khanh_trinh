@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRightIcon, DownloadIcon } from "@radix-ui/react-icons";
 import { site } from "@/data/site";
 import SonarField from "./SonarField";
+import SocialLinks from "@/components/SocialLinks";
 
 // Renders `intro` with the owner's name in bold, wherever it appears.
 const Intro: React.FC<{ text: string }> = ({ text }) => {
@@ -21,7 +22,7 @@ const Hero: React.FC = () => {
   const words = site.tagline.split(" ");
   const stack = words.length <= 4;
   const resume = site.documents[0];
-  const proof = site.hero.proof.slice(0, 3);
+  const proof = site.hero.proof.slice(0, 4);
 
   // Stagger: headline words first, then intro, proof, actions.
   const delay = (step: number) => ({ animationDelay: `${step * 90}ms` });
@@ -55,7 +56,7 @@ const Hero: React.FC = () => {
 
         {proof.length > 0 && (
           <ul
-            className="mt-10 grid max-w-[40rem] gap-x-8 gap-y-5 motion-safe:animate-rise sm:grid-cols-3"
+            className="mt-10 grid max-w-[40rem] gap-x-8 gap-y-5 motion-safe:animate-rise sm:grid-cols-2"
             style={delay(after + 1)}
           >
             {proof.map((item) => (
@@ -94,6 +95,10 @@ const Hero: React.FC = () => {
               aria-hidden="true"
             />
           </Link>
+        </div>
+
+        <div className="mt-8 motion-safe:animate-rise" style={delay(after + 3)}>
+          <SocialLinks emailAsAddress />
         </div>
       </div>
     </section>

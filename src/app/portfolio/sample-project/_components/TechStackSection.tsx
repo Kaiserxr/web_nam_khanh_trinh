@@ -20,7 +20,7 @@ const TechStackSection: React.FC<TechStackSectionProps> = ({ techStacks }) => {
               {stack.technologies.map((tech, i) => (
                 <li
                   key={i}
-                  className="bg-white/10 text-off-black text-xs font-medium mr-2 mb-2 px-2 py-1 rounded-full"
+                  className="mb-2 mr-2 rounded-full bg-light-grey px-2.5 py-1 text-xs font-medium text-off-black"
                 >
                   {tech}
                 </li>

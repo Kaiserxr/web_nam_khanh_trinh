@@ -1,8 +1,7 @@
 "use client";
 
 import React from "react";
-import Navbar from "@/components/NavBar";
-import Footer from "@/components/Footer";
+import { PageShell } from "@/components/PageShell";
 import ProjectHeader from "./_components/ProjectHeader";
 import TechStackSection from "./_components/TechStackSection";
 import TableOfContents from "./_components/TableOfContents";
@@ -48,9 +47,7 @@ const ProjectPage: React.FC = () => {
   const sections = projectData.contentSections.map((section) => section.title);
 
   return (
-    <div className="min-h-screen bg-page flex flex-col">
-      <Navbar />
-      <main className="flex-grow pt-20 pb-12">
+    <PageShell>
         <ProjectHeader
           title={projectData.title}
           subtitle={projectData.subtitle}
@@ -58,7 +55,7 @@ const ProjectPage: React.FC = () => {
           heroImageUrl={projectData.heroImageUrl}
           websiteLink={projectData.websiteLink}
         />
-        <div className="flex flex-col md:flex-row md:ml-4">
+        <div className="mx-auto flex max-w-6xl flex-col md:flex-row">
           <div className="w-full md:w-3/4">
             <TechStackSection techStacks={projectData.techStacks} />
             {projectData.contentSections.map((section) => (
@@ -78,9 +75,7 @@ const ProjectPage: React.FC = () => {
             </aside>
           )}
         </div>
-      </main>
-      <Footer />
-    </div>
+    </PageShell>
   );
 };
 
