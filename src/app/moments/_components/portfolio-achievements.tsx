@@ -19,6 +19,14 @@ type Achievement = {
 // Leave out "image" to show a trophy icon instead of a photo.
 const achievements: Achievement[] = [
   {
+    id: "7",
+    title: "Research Assistant at ERA Lab",
+    date: "October 2026",
+    description:
+      "Joined ERA Lab at the University of South Florida as an Undergraduate Research Assistant, researching 3D sonar-based object detection from underwater point clouds, sparse voxel attention, and multi-modal fusion architectures.",
+    image: "/logos/era-lab.png",
+  },
+  {
     id: "6",
     title: "Technical Lead at SCP",
     date: "October 2026",
